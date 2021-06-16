@@ -1,4 +1,4 @@
-package com.demo.customrolesengine.exception;
+package com.business.rolesengine.exception;
 
 public class InvalidRequest  extends Exception {
     public InvalidRequest(String message) {

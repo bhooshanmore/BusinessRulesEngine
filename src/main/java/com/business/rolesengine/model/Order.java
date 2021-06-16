@@ -1,22 +1,11 @@
-package com.demo.customrolesengine.model;
-
-import com.demo.customrolesengine.comon.ServiceEnum;
+package com.business.rolesengine.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-
-    private ServiceEnum serviceId;
+    private String requestId;
     private List<ProductDetails> productDetails = new ArrayList<>();
-
-    public ServiceEnum getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(ServiceEnum serviceId) {
-        this.serviceId = serviceId;
-    }
 
     public List<ProductDetails> getProductDetails() {
         return productDetails;
@@ -26,10 +15,17 @@ public class Order {
         this.productDetails = productDetails;
     }
 
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
-                "serviceId=" + serviceId +
                 ", productDetails=" + productDetails +
                 '}';
     }

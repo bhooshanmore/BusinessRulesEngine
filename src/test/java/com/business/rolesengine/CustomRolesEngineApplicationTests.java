@@ -1,4 +1,4 @@
-package com.demo.customrolesengine;
+package com.business.rolesengine;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
