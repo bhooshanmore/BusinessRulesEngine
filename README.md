@@ -3,7 +3,7 @@
 
 ## Introduction:
 
-This is demo project for custom Business rule engine using spring boot framework without using Ready available Drool engine
+This is demo project for custom Business rule engine using spring boot framework without using readly available **Drool rule engine.**
 
 ### Requirements:
 1. JDK 1.8 
