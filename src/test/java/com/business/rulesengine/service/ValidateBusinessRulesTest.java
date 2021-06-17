@@ -1,9 +1,9 @@
-package com.business.rolesengine.service;
+package com.business.rulesengine.service;
 
 
-import com.business.rolesengine.common.RulesMessages;
-import com.business.rolesengine.model.Order;
-import com.business.rolesengine.model.PaymentDetails;
+import com.business.rulesengine.common.RulesMessages;
+import com.business.rulesengine.model.Order;
+import com.business.rulesengine.model.PaymentDetails;
 import org.junit.Test;
 
 import java.util.Arrays;

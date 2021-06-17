@@ -1,4 +1,4 @@
-package com.business.rolesengine.model;
+package com.business.rulesengine.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;

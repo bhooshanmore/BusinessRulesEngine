@@ -1,4 +1,4 @@
-package com.business.rolesengine.model;
+package com.business.rulesengine.model;
 
 import java.util.ArrayList;
 import java.util.List;

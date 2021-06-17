@@ -1,8 +1,8 @@
-package com.business.rolesengine.service;
+package com.business.rulesengine.service;
 
-import com.business.rolesengine.exception.InvalidRequest;
-import com.business.rolesengine.model.Order;
-import com.business.rolesengine.model.PaymentDetails;
+import com.business.rulesengine.exception.InvalidRequest;
+import com.business.rulesengine.model.Order;
+import com.business.rulesengine.model.PaymentDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

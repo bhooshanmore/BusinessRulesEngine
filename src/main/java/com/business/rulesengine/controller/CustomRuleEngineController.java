@@ -1,8 +1,8 @@
-package com.business.rolesengine.controller;
+package com.business.rulesengine.controller;
 
-import com.business.rolesengine.exception.InvalidRequest;
-import com.business.rolesengine.model.Order;
-import com.business.rolesengine.service.CustomRuleServiceImpl;
+import com.business.rulesengine.exception.InvalidRequest;
+import com.business.rulesengine.model.Order;
+import com.business.rulesengine.service.CustomRuleServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

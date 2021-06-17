@@ -1,7 +1,7 @@
-package com.business.rolesengine.service;
+package com.business.rulesengine.service;
 
-import com.business.rolesengine.common.RulesMessages;
-import com.business.rolesengine.model.PaymentDetails;
+import com.business.rulesengine.common.RulesMessages;
+import com.business.rulesengine.model.PaymentDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.LinkedHashMap;
 import java.util.function.Function;
 
-import static com.business.rolesengine.common.RulesMessages.PAYMENT_IS_NOT_FOUND;
+import static com.business.rulesengine.common.RulesMessages.PAYMENT_IS_NOT_FOUND;
 
 /**
  * This Dispatch pattern where we are adding all rules as many we required

@@ -1,8 +1,8 @@
-package com.business.rolesengine.service;
+package com.business.rulesengine.service;
 
-import com.business.rolesengine.exception.InvalidRequest;
-import com.business.rolesengine.model.Order;
-import com.business.rolesengine.model.PaymentDetails;
+import com.business.rulesengine.exception.InvalidRequest;
+import com.business.rulesengine.model.Order;
+import com.business.rulesengine.model.PaymentDetails;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Arrays;
 import java.util.UUID;
 
-import static com.business.rolesengine.common.RulesMessages.*;
+import static com.business.rulesengine.common.RulesMessages.*;
 
 @RunWith(SpringRunner.class)
 public class CustomRuleServiceImplTest {
