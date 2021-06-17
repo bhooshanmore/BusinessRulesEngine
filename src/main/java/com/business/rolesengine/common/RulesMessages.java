@@ -13,6 +13,7 @@ public class RulesMessages {
     public static final String APPLY_THE_UPGRADE = "apply the upgrade";
     public static final String ACTIVATION_AND_UPGRADE = "e-mail the owner and inform them of the activation/upgrade";
     public static final String FIRST_AID = "add a free First Aid video to the packing slip (the result of a court decision in 1997).";
+    public static final String PAYMENT_IS_NOT_FOUND = "Payment is not found";
 
 
 

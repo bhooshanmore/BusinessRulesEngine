@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Order {
     private String requestId;
-    private List<ProductDetails> productDetails = new ArrayList<>();
+    private List<PaymentDetails> paymentDetails = new ArrayList<>();
 
-    public List<ProductDetails> getProductDetails() {
-        return productDetails;
+    public List<PaymentDetails> getPaymentDetails() {
+        return paymentDetails;
     }
 
-    public void setProductDetails(List<ProductDetails> productDetails) {
-        this.productDetails = productDetails;
+    public void setPaymentDetails(List<PaymentDetails> paymentDetails) {
+        this.paymentDetails = paymentDetails;
     }
 
     public String getRequestId() {
@@ -26,7 +26,8 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                ", productDetails=" + productDetails +
+                "requestId='" + requestId + '\'' +
+                ", PaymentDetails=" + paymentDetails +
                 '}';
     }
 }

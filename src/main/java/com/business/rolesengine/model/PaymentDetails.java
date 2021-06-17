@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDetails {
+public class PaymentDetails {
 
     private String name;
     private String type;
     @JsonProperty(access= JsonProperty.Access.READ_ONLY)
-    private List<String> actions = new ArrayList<>();
+    private List<String> rule = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -27,20 +27,20 @@ public class ProductDetails {
         this.type = type;
     }
 
-    public List<String> getActions() {
-        return actions;
+    public List<String> getRule() {
+        return rule;
     }
 
-    public void setActions(List<String> actions) {
-        this.actions = actions;
+    public void setRule(List<String> rule) {
+        this.rule = rule;
     }
 
     @Override
     public String toString() {
-        return "ProductDetails{" +
+        return "PaymentDetails{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", actions=" + actions +
+                ", rule=" + rule +
                 '}';
     }
 }

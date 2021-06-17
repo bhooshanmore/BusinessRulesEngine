@@ -25,7 +25,7 @@ public class CustomRuleEngineController {
         this.customRuleService = customRuleService;
     }
 
-    @PostMapping(value = "validaterule", produces = "application/json")
+    @PostMapping(value = "validator", produces = "application/json")
     public ResponseEntity<?> validateBusinessRules(@RequestBody Order orderDetails) {
         try {
             orderDetails.setRequestId(UUID.randomUUID().toString());

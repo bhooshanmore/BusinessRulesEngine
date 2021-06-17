@@ -1,13 +1,15 @@
 package com.business.rolesengine.service;
 
 import com.business.rolesengine.common.RulesMessages;
-import com.business.rolesengine.model.ProductDetails;
+import com.business.rolesengine.model.PaymentDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.LinkedHashMap;
 import java.util.function.Function;
+
+import static com.business.rolesengine.common.RulesMessages.PAYMENT_IS_NOT_FOUND;
 
 /**
  * This Dispatch pattern where we are adding all rules as many we required
@@ -18,24 +20,23 @@ import java.util.function.Function;
 public class ValidateBusinessRules {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidateBusinessRules.class);
-    private final LinkedHashMap<Function<ProductDetails, Boolean>, Function<ProductDetails, String>> dispatch = new LinkedHashMap<>();
+    private final LinkedHashMap<Function<PaymentDetails, Boolean>, Function<PaymentDetails, String>> dispatch = new LinkedHashMap<>();
 
     public ValidateBusinessRules() {
+        // Default constructor
     }
 
     /**
-     * @param productDetails Check access for product by type.
+     * @param paymentDetails Check access for product by type.
      * @return String
      */
-    public String access(ProductDetails productDetails) {
-
-        for (Function<ProductDetails, Boolean> predict : this.dispatch.keySet()) {
-            if (predict.apply(productDetails)) {
-                return this.dispatch.get(predict).apply(productDetails);
+    public String access(PaymentDetails paymentDetails) {
+        for (Function<PaymentDetails, Boolean> predict : this.dispatch.keySet()) {
+            if (Boolean.TRUE.equals(predict.apply(paymentDetails))) {
+                return this.dispatch.get(predict).apply(paymentDetails);
             }
         }
-        LOGGER.error("Error om access() ");
-        return "Payment is not found";
+        return PAYMENT_IS_NOT_FOUND;
     }
 
     /**
@@ -46,31 +47,29 @@ public class ValidateBusinessRules {
      */
     public ValidateBusinessRules init() {
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("physical product"),
-                productDetails -> RulesMessages.PACKING_SLIP_FOR_SHIPPING
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("membership") && paymentDetails.getName().equalsIgnoreCase("upgrade"),
+                paymentDetails -> RulesMessages.ACTIVATION_AND_UPGRADE
         );
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("book"),
-                productDetails -> RulesMessages.DUPLICATE_PARKING_SLIP_FOR_THE_ROYALTY_DEPARTMENT
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("video") && paymentDetails.getName().equalsIgnoreCase("Learning to Ski"),
+                paymentDetails -> RulesMessages.FIRST_AID
         );
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("membership"),
-                productDetails -> RulesMessages.ACTIVATE_THAT_MEMBERSHIP
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("physical product"),
+                paymentDetails -> RulesMessages.PACKING_SLIP_FOR_SHIPPING
         );
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("upgrade membership"),
-                productDetails -> RulesMessages.APPLY_THE_UPGRADE
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("book"),
+                paymentDetails -> RulesMessages.DUPLICATE_PARKING_SLIP_FOR_THE_ROYALTY_DEPARTMENT
         );
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("membership") && productDetails.getType().equalsIgnoreCase("upgrade"),
-                productDetails -> RulesMessages.ACTIVATION_AND_UPGRADE
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("membership"),
+                paymentDetails -> RulesMessages.ACTIVATE_THAT_MEMBERSHIP
         );
         this.dispatch.put(
-                productDetails -> productDetails.getType().equalsIgnoreCase("video ") && productDetails.getName().equalsIgnoreCase("Learning to Ski"),
-                productDetails -> RulesMessages.FIRST_AID
+                paymentDetails -> paymentDetails.getType().trim().equalsIgnoreCase("upgrade membership"),
+                paymentDetails -> RulesMessages.APPLY_THE_UPGRADE
         );
         return this;
     }
-
-
 }
