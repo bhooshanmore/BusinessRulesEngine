@@ -1,4 +1,4 @@
-package com.business.rolesengine.common;
+package com.business.rulesengine.common;
 
 public class RulesMessages {
 

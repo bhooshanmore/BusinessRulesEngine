@@ -1,13 +1,13 @@
-package com.business.rolesengine;
+package com.business.rulesengine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CustomRolesEngineApplication {
+public class BusinessRulesEngineApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CustomRolesEngineApplication.class, args);
+		SpringApplication.run(BusinessRulesEngineApplication.class, args);
 	}
 
 }
